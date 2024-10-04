@@ -1,0 +1,233 @@
+* {
+  box-sizing: border-box;
+}
+
+.columns {
+  display: flex;
+  gap: 2em;
+}
+
+.columns > * {
+  flex-grow: 1;
+}
+
+/* MVP.css v1.8 - https://github.com/andybrewer/mvp */
+
+:root {
+  --active-brightness: 0.85;
+  --border-radius: 10px;
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --color-primary: #118bee;
+  --color-primary-light: rgba(17, 139, 238, 0.1);
+  --color-secondary: #920de9;
+  --color-secondary-light: rgba(146, 13, 233, 0.1);
+  --color-bg: #fdfdfd;
+  --color-bg-secondary: #f4f4f4;
+  --color-text: #333;
+  --color-text-secondary: #777;
+  --color-link: #118bee;
+  --font-family: 'Segoe UI', Roboto, sans-serif;
+  --line-height: 1.6;
+  --width-content: 1200px;
+  --hover-brightness: 1.1;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: #0097fc;
+    --color-primary-light: rgba(0, 151, 252, 0.15);
+    --color-secondary: #e20de9;
+    --color-bg: #1e1e1e;
+    --color-bg-secondary: #333;
+    --color-text: #f1f1f1;
+    --color-text-secondary: #999;
+  }
+}
+
+/* General Layout */
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: var(--line-height);
+  margin: 0;
+  padding: 0;
+}
+
+header,
+footer,
+main {
+  max-width: var(--width-content);
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: var(--color-bg-secondary);
+  margin: 3rem 0;
+}
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+img {
+  max-width: 100%;
+}
+
+article aside {
+  background-color: var(--color-secondary-light);
+  border-left: 4px solid var(--color-secondary);
+  padding: 1rem;
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 1rem;
+}
+
+nav ul li:hover ul {
+  display: block;
+}
+
+nav ul li ul {
+  display: none;
+  position: absolute;
+  background: var(--color-bg);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  line-height: var(--line-height);
+}
+
+p {
+  margin: 0.8rem 0;
+}
+
+code,
+samp {
+  background-color: var(--color-primary-light);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--border-radius);
+  color: var(--color-primary);
+}
+
+blockquote {
+  padding: 1rem;
+  margin: 1.5rem auto;
+  background-color: var(--color-bg-secondary);
+  border-left: 4px solid var(--color-primary);
+  max-width: var(--width-content);
+}
+
+blockquote footer {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+a:hover {
+  filter: brightness(var(--hover-brightness));
+  text-decoration: underline;
+}
+
+/* Buttons */
+button,
+a.button {
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: bold;
+  cursor: pointer;
+  transition: filter 0.3s ease;
+}
+
+button:hover,
+a.button:hover {
+  filter: brightness(var(--hover-brightness));
+}
+
+button:disabled {
+  background-color: var(--color-bg-secondary);
+  cursor: not-allowed;
+}
+
+/* Forms */
+form {
+  background-color: #fff;
+  padding: 1.5rem;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  max-width: var(--width-content);
+  margin: 2rem 0;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--color-bg-secondary);
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+}
+
+table th,
+table td {
+  text-align: left;
+  padding: 1rem;
+  border: 1px solid var(--color-bg-secondary);
+}
+
+table tr:nth-child(even) {
+  background-color: var(--color-bg-secondary);
+}
+
+table thead {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+table thead th {
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
